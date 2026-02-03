@@ -1,0 +1,66 @@
+cd ~/discovery_piscine
+cd cell03
+mkdir ex01
+cd ex01
+touch balloon.html
+code balloon.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Explode this balloon</title>
+    <style>
+      #balloon {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+        margin: 100px auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="balloon"
+         onclick="grow()"
+         onmouseleave="shrink()">
+    </div>
+
+    <script>
+      let size = 200;
+      let colors = ["red", "green", "blue"];
+      let colorIndex = 0;
+
+      function grow() {
+        size += 10;
+
+        if (size > 420) {
+          size = 200;
+          colorIndex = 0;
+        } else {
+          colorIndex = (colorIndex + 1) % colors.length;
+        }
+
+        updateBalloon();
+      }
+
+      function shrink() {
+        size -= 5;
+        if (size < 200)
+          size = 200;
+
+        colorIndex--;
+        if (colorIndex < 0)
+          colorIndex = colors.length - 1;
+
+        updateBalloon();
+      }
+
+      function updateBalloon() {
+        const balloon = document.getElementById("balloon");
+        balloon.style.width = size + "px";
+        balloon.style.height = size + "px";
+        balloon.style.backgroundColor = colors[colorIndex];
+      }
+    </script>
+  </body>
+</html>
