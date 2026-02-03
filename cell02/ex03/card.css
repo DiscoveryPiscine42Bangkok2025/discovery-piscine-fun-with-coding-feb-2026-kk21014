@@ -1,0 +1,57 @@
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  width: 300px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* invisible table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  border: none;
+}
+
+/* profile picture */
+.profile {
+  width: 150px;
+  border-radius: 50%;
+}
+
+/* login + description */
+.login {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.desc {
+  color: gray;
+  font-size: 14px;
+}
+
+/* social icons */
+.social img {
+  width: 24px;
+  margin: 5px;
+}
+
+/* contact button */
+button {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
