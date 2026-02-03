@@ -1,7 +1,0 @@
-cd ~
-cd discovery_piscine
-cd cell00
-mkdir ex01
-cd ex01
-echo "Z" > z
-cat z
