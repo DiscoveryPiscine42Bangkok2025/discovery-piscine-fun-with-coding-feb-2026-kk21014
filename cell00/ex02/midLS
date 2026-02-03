@@ -1,1 +1,8 @@
+cd ~
+cd discovery_piscine
+cd cell00
+mkdir ex02
+cd ex02
+echo "ls -m" > midLS
+cat midLS
 
