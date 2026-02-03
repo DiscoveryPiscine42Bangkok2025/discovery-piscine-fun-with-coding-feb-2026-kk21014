@@ -1,0 +1,70 @@
+cd ~/discovery_piscine
+cd cell03
+mkdir ex02
+cd ex02
+touch calc.html
+code calc.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>It’s over 9000</title>
+  </head>
+
+  <body>
+    <input type="text" id="left">
+    
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+
+    <input type="text" id="right">
+
+    <input type="button" value="Try me!" onclick="calculate()">
+
+    <script>
+      function isValidNumber(n) {
+        return /^\d+$/.test(n);
+      }
+
+      function calculate() {
+        const left = document.getElementById("left").value;
+        const right = document.getElementById("right").value;
+        const op = document.getElementById("operator").value;
+
+        if (!isValidNumber(left) || !isValidNumber(right)) {
+          alert("Error :(");
+          return;
+        }
+
+        const a = parseInt(left);
+        const b = parseInt(right);
+
+        if ((op === "/" || op === "%") && b === 0) {
+          alert("It’s over 9000!");
+          console.log("It’s over 9000!");
+          return;
+        }
+
+        let result;
+        switch (op) {
+          case "+": result = a + b; break;
+          case "-": result = a - b; break;
+          case "*": result = a * b; break;
+          case "/": result = a / b; break;
+          case "%": result = a % b; break;
+        }
+
+        alert(result);
+        console.log(result);
+      }
+
+      setInterval(function () {
+        alert("Please, use me...");
+      }, 30000);
+    </script>
+  </body>
+</html>
