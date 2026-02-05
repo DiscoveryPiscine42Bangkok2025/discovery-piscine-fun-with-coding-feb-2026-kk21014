@@ -9,8 +9,3 @@ else
   done
 fi
 
-chmod +x argv.sh
-./argv.sh
-./argv.sh 42
-./argv.sh Hello World ! 42
-
