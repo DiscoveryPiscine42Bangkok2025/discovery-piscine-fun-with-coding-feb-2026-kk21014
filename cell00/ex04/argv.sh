@@ -1,10 +1,3 @@
-cd ~
-cd discovery_piscine
-cd cell00
-mkdir ex04
-cd ex04
-touch argv.sh
-code argv.sh
 #!/bin/bash
 
 if [ $# -eq 0 ]; then
