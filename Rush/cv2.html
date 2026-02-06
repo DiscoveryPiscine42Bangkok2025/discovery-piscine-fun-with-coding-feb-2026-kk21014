@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV – Rinlanee Sasakul</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="back">← Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ABOUT ***เปลี่ยน***-->
+  <section id="about" class="section soft">
+    <img src="https://i.pinimg.com/originals/58/8f/c8/588fc8f7a114bb678a0a82994f0603ab.jpg" alt="Profile photo" class="avatar">
+
+    <h2>Rinlanee Sasakul <span style="font-weight: 400;">(Rin)</span></h2>
+
+    <!-- กล่องครอบ 2 ฝั่ง -->
+  <div class="about-grid">
+
+    <!-- ฝั่งซ้าย : Education -->
+    <div class="about-card">
+      <h3>Education</h3>
+
+      <p><strong>King Mongkut’s Institute of Technology Ladkrabang</strong></p>
+      <p>Applied Statistics & Data Analytics</p>
+      <p>2021 – Present</p>
+    </div>
+
+    <!-- ฝั่งขวา : About Me -->
+    <div class="about-card highlight">
+      <h3>About Me</h3>
+
+      <p>
+        Hi, I'm Rinlanee Sasakul (Rin).  
+        I'm currently studying Applied Statistics and Data Analytics
+        I'm interested in transforming data into insights through analysis,
+        dashboard creation, and user-centered problem solving.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+  <!-- SKILLS เปลี่ยน *** -->
+   <section id="skills" class="section soft">
+    <h2>Skills</h2>
+
+  <div class="skills-grid">
+  <div class="skill-card">
+    <img src="https://icon-icons.com/download-file?file=https%3A%2F%2Fimages.icon-icons.com%2F542%2FPNG%2F512%2Fgraph-increase_icon-icons.com_53133.png&id=53133&pack_or_individual=pack" alt="Data Analysis">
+    <p>Data Analysis</p>
+  </div>
+
+  <div class="skill-card">
+    <img src="https://cdn-icons-png.flaticon.com/512/5924/5924766.png" alt="Business Analysis">
+    <p>Business Analysis</p>
+  </div>
+
+  <div class="skill-card">
+    <img src="https://www.uc3m.es/sdic/media/sdic/img/mediana/original/en-im_google-data-studio_logo_20036.../looker-studio-logo.png" alt="Google Looker Studio">
+    <p>Google Looker Studio</p>
+  </div>
+
+  <div class="skill-card">
+  <img src="https://niltechedu.com/blog/wp-content/uploads/2021/11/python-programming-language.png" alt="Python">
+  <p>Python</p>
+</div>
+
+<div class="skill-card">
+  <img src="https://skillforge.com/wp-content/uploads/2020/10/javascript.png" alt="JavaScript">
+  <p>JavaScript</p>
+</div>
+
+<div class="skill-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFBDpP5C5t_t8FjbMu-rjqndyjCmaoKMNTjA&s" alt="HTML">
+  <p>HTML</p>
+</div>
+</div>
+</section>
+
+  <section id="experience" class="section">
+    <h2>Project Experience</h2><br>
+
+    <div class="project">
+      <h3>Business Analysis Project – KFC</h3><br>
+      <p class="project-role">
+        Data Analysis & Dashboard Design
+      </p>
+
+      <p class="project-desc">
+        Conducted a business analysis project for KFC using a design thinking approach.
+        Identified business problems by analyzing customer pain points and user needs.
+        Collected survey data and performed data cleaning and analysis.
+        Designed interactive dashboards using Google Looker Studio to visualize insights
+        and support business decision-making.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section soft">
+  <h2>Contact</h2><br>
+
+  <!-- กล่องรวมไอคอน -->
+  <div class="contact-icons">
+    <a href="https://github.com/DiscoveryPiscine42Bangkok2025/discovery-piscine-fun-with-coding-feb-2026-Rinlanee25.git" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/250px-GitHub_Invertocat_Logo.svg.png" alt="GitHub">
+    </a>
+
+    <a href="mailto:67050487@kmitl.ac.th">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1280px-Gmail_icon_%282020%29.svg.png" alt="Gmail">
+    </a>
+  </div>
+
+</section>
+
+  <!-- เพิ่ม*** -->
+<script>
+  // ดึงทุก section ที่มี id
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".navbar a");
+
+  function onScroll() {
+    let scrollY = window.pageYOffset;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120; // เผื่อ navbar
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute("id");
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        navLinks.forEach(link => link.classList.remove("active"));
+
+        const activeLink = document.querySelector(
+          `.navbar a[href="#${sectionId}"]`
+        );
+        if (activeLink) activeLink.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", onScroll);
+</script>
+
+</body>
+</html>
